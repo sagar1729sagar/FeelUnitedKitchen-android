@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by sagar on 29/05/17.
  */
 
-public class MenuItem {
+public class Item {
 
 
     private String itemId,itemName,itemUrl,priceToday,priceTomorrow,priceLater,availableMonday,
@@ -14,7 +14,7 @@ public class MenuItem {
                     availableSunday,itemCategeory,foodType,itemDescription,displayOrder,objectId;
     private Date created,updated;
 
-    public MenuItem() {
+    public Item() {
         //Empty constructor
     }
 

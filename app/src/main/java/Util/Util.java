@@ -1,11 +1,6 @@
 package Util;
 
-import android.app.Activity;
-import android.graphics.Color;
-import android.os.Build;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
+
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
