@@ -7,10 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import Util.Preferences;
+
 /**
  * Created by sagar on 29/05/17.
  */
 public class Cart_Fragment extends Fragment {
+    private Preferences prefs;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -20,5 +23,7 @@ public class Cart_Fragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        prefs = new Preferences(getContext());
+       // prefs.setCurrentView(2);
     }
 }

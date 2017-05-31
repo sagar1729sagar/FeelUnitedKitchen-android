@@ -7,10 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import Util.Preferences;
+
 /**
  * Created by sagar on 29/05/17.
  */
 public class Feedback_fragment extends Fragment{
+    private Preferences prefs;
 
     @Nullable
     @Override
@@ -21,5 +24,7 @@ public class Feedback_fragment extends Fragment{
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        prefs = new Preferences(getContext());
+        prefs.setCurrentView(5);
     }
 }

@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.Date;
 
-import Models.Item;
+import Models.MenuItem;
 import Util.Util;
 
 /**
@@ -67,7 +67,7 @@ public class MenuDB extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addMenuItem(Item item){
+    public void addMenuItem(MenuItem item){
         SQLiteDatabase db = this.getReadableDatabase();
 
         ContentValues values = new ContentValues();
@@ -97,8 +97,8 @@ public class MenuDB extends SQLiteOpenHelper {
 
     }
 
-    public ArrayList<Item> getMenuItems(){
-        ArrayList<Item> items = new ArrayList<>();
+    public ArrayList<MenuItem> getMenuItems(){
+        ArrayList<MenuItem> items = new ArrayList<>();
 
         String query = "SELECT * FROM "+TABLE_MNEU;
 
@@ -107,7 +107,7 @@ public class MenuDB extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()){
             do {
-                Item item = new Item();
+                MenuItem item = new MenuItem();
                 item.setItemId(cursor.getString(1));
                 item.setItemName(cursor.getString(2));
                 item.setItemUrl(cursor.getString(3));
@@ -138,7 +138,7 @@ public class MenuDB extends SQLiteOpenHelper {
         return items;
     }
 
-    public void deleteItem(Item item) {
+    public void deleteItem(MenuItem item) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_MNEU, ITEM_NAME + " = ?", new String[]{String.valueOf(item.getItemName())});
@@ -161,9 +161,9 @@ public class MenuDB extends SQLiteOpenHelper {
         onCreate(db);
     }
     
-    public boolean checkForItem(Item item){
+    public boolean checkForItem(MenuItem item){
 
-        ArrayList<Item> items = new ArrayList<>();
+        ArrayList<MenuItem> items = new ArrayList<>();
         items = getMenuItems();
         if (items.size() != 0) {
             

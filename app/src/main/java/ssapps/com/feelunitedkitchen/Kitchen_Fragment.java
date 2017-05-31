@@ -9,9 +9,12 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import Adapters.ViewPagerAdapter;
+import Util.Preferences;
 
 /**
  * Created by sagar on 29/05/17.
@@ -20,6 +23,7 @@ public class Kitchen_Fragment extends Fragment {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private Preferences prefs;
 
 
     @Nullable
@@ -38,16 +42,40 @@ public class Kitchen_Fragment extends Fragment {
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
 
+        prefs = new Preferences(getContext());
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+            prefs.setCurrentView(position+1);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+
     }
+
 
     private void setupViewPager(ViewPager viewPager) {
 
         // configure view pager
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
-        viewPagerAdapter.addFragment(new Menu_Fragment(),"HOME");
+        viewPagerAdapter.addFragment(new Menu_Fragment(),"MENU");
         viewPagerAdapter.addFragment(new Cart_Fragment(),"CART");
         viewPagerAdapter.addFragment(new Active_Orders_Fragment(),"ACTIVE ORDERS");
         viewPagerAdapter.addFragment(new Delivered_Orders_Fragment(),"DELIVERED ORDERS");
         viewPager.setAdapter(viewPagerAdapter);
     }
+
+
+
 }

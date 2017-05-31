@@ -7,10 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
+import DataBaseUtility.MenuDB;
+import Models.Item;
+import Util.Preferences;
+import it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow;
+
 /**
  * Created by sagar on 29/05/17.
  */
 public class Menu_Fragment extends Fragment {
+    private Preferences prefs;
+    private MenuDB db;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -20,5 +29,7 @@ public class Menu_Fragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        prefs = new Preferences(getContext());
+
     }
 }
