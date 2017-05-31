@@ -10,9 +10,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import DataBaseUtility.MenuDB;
-import Models.Item;
 import Util.Preferences;
-import it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow;
+
 
 /**
  * Created by sagar on 29/05/17.
