@@ -24,6 +24,6 @@ public class Login_Fragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         prefs = new Preferences(getContext());
-        prefs.setCurrentView(6);
+       //SETCURRE prefs.setCurrentView(6);
     }
 }

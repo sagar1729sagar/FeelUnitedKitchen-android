@@ -25,6 +25,6 @@ public class Feedback_fragment extends Fragment{
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         prefs = new Preferences(getContext());
-        prefs.setCurrentView(5);
+       // prefs.setCurrentView(5);
     }
 }

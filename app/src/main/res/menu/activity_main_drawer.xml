@@ -4,6 +4,10 @@
     <group android:checkableBehavior="single">
         <item android:id="@+id/nav_kitchen" android:icon="@drawable/ic_location_city_black_24dp"
             android:title="  Kitchen  " />
+        <item android:id="@+id/nav_cart" android:icon="@drawable/ic_shopping_cart_black_24dp"
+            android:title="   Cart   " />
+        <item android:id="@+id/nav_active_orders" android:icon="@drawable/ic_restaurant_black_24dp"
+            android:title="   Active Orders   " />
         <item android:id="@+id/nav_fb" android:icon="@drawable/ic_sms_black_24dp"
             android:title="   Feedback   " />
         <item android:id="@+id/nav_account" android:icon="@drawable/ic_account_circle_black_24dp"

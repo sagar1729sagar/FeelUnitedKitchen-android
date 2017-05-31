@@ -52,7 +52,7 @@ public class Kitchen_Fragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-            prefs.setCurrentView(position+1);
+           // prefs.setCurrentView(position+1);
             }
 
             @Override
@@ -69,10 +69,9 @@ public class Kitchen_Fragment extends Fragment {
 
         // configure view pager
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
-        viewPagerAdapter.addFragment(new Menu_Fragment(),"MENU");
-        viewPagerAdapter.addFragment(new Cart_Fragment(),"CART");
-        viewPagerAdapter.addFragment(new Active_Orders_Fragment(),"ACTIVE ORDERS");
-        viewPagerAdapter.addFragment(new Delivered_Orders_Fragment(),"DELIVERED ORDERS");
+        viewPagerAdapter.addFragment(new Menu_Fragment(),"STARTERS");
+        viewPagerAdapter.addFragment(new Menu_Fragment(),"MAIN COURSE");
+        viewPagerAdapter.addFragment(new Menu_Fragment(),"DESERT");
         viewPager.setAdapter(viewPagerAdapter);
     }
 

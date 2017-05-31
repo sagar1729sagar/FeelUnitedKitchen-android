@@ -26,19 +26,16 @@ public class Preferences {
         editor = prefs.edit();
     }
 
-    public void setCurrentView(int code){
+    public void setCurrenCourse(int code){
         /**
-         * 0 - Menu Page
-         * 1 - Cart Page
-         * 2 - Active Orders page
-         * 3 - Delivery ORders Page
-         * 4 - Feedback Page
-         * 5 - Accounts Page
+         * 0 - Starters
+         * 1 - Main course
+         * 2 -Deserts
          */
         editor.putInt(CURRENT_VIEW,code);
         editor.commit();
     }
-    public int isInView(){
+    public int getCourse(){
         return prefs.getInt(CURRENT_VIEW,0);
     }
 
