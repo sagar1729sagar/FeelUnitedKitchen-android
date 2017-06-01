@@ -62,6 +62,7 @@ public class Kitchen_Fragment extends Fragment {
         });
 
 
+
     }
 
 
@@ -74,6 +75,8 @@ public class Kitchen_Fragment extends Fragment {
         viewPagerAdapter.addFragment(new Menu_Fragment(),"DESERT");
         viewPager.setAdapter(viewPagerAdapter);
     }
+
+
 
 
 
