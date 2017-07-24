@@ -19,11 +19,32 @@ public class Preferences {
     String PREF_NAME = "Kitchen Preferences";
     private static final String CURRENT_VIEW = "CurrentView";
     private static final String INTERNET_PERMISSION = "InternetPermission";
+    private static final String CURRENT_DATE = "CurrentDate";
+    private static final String SELECTED_DATE = "SelectedDate";
 
     public Preferences(Context context){
         this.context = context;
         prefs = context.getSharedPreferences(PREF_NAME,PVT_MODE);
         editor = prefs.edit();
+    }
+
+
+    public void setCurrentDate(String date){
+        editor.putString(CURRENT_DATE,date);
+        editor.commit();
+    }
+
+    public String getCurrentDate(){
+        return prefs.getString(CURRENT_DATE,"0");
+    }
+
+    public void setSelectedDate(String date){
+        editor.putString(SELECTED_DATE,"0");
+        editor.commit();
+    }
+
+    public String getSelectedDate(){
+        return prefs.getString(SELECTED_DATE,"0");
     }
 
     public void setCurrenCourse(int code){
